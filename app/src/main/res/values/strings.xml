@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Filter Change</string>
+    <string name="last">last</string>
+    <string name="next">next</string>
+    <string name="filter_picture">filter picture</string>
+    <string name="_1">1</string>
+    <string name="biopad_nmech_filter">BioPad\nMech. filter</string>
+    <string name="alert_image">alert image</string>
+    <string name="_2">2</string>
+    <string name="biocarb_nc_filter">BioCarb\nC. filter</string>
+    <string name="_4">4</string>
+    <string name="nitrax_nn_remover">Nitrax\nN remover</string>
+    <string name="_5">5</string>
+    <string name="bioplus_ncoarse">BioPlus\nCoarse</string>
+    <string name="_7">7</string>
+    <string name="bioplus_nfine_2x">BioPlus\nFine 2X</string>
+    <string name="optional_media">↓ Optional media ↓</string>
+    <string name="bioboost_nfilter_acc">BioBoost\nFilter acc</string>
+    <string name="_3">3</string>
+    <string name="carbax_ncarbon">Carbax\nCarbon +</string>
+    <string name="_6">6</string>
+    <string name="cirax_ncer_gran">Cirax\nCer. gran.</string>
+    <string name="phorax_nphosphate">Phorax\nPhosphate</string>
+    <string name="amorax_nammonia">Amorax\nAmmonia</string>
+</resources>
