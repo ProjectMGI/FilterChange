@@ -22,4 +22,11 @@
     <string name="cirax_ncer_gran">Cirax\nCer. gran.</string>
     <string name="phorax_nphosphate">Phorax\nPhosphate</string>
     <string name="amorax_nammonia">Amorax\nAmmonia</string>
+    <string name="stock_control">stock control</string>
+    <string name="bioBoost">BioBoost</string>
+    <string name="zero">0</string>
+    <string name="months_left">months left</string>
+    <string name="minus">minus</string>
+    <string name="plus">plus</string>
+    <string name="divider">divider</string>
 </resources>

@@ -149,6 +149,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btnOpenStock = findViewById(R.id.btnOpenStock);
+        btnOpenStock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Stock.class));
+            }
+        });
+
         tvBioPadLast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

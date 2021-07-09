@@ -13,8 +13,18 @@
         android:layout_height="wrap_content"
         android:text="@string/filter_picture"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnOpenStock"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnOpenStock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stock_control"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnOpenPicture"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
@@ -65,7 +75,7 @@
                 android:layout_marginHorizontal="3dp"
                 android:layout_weight="1"
                 android:text="@string/next"
-                android:textColor="@color/holo_red" />
+                android:textColor="@color/holo_green" />
 
             <ImageView
                 android:id="@+id/ivBioPad"
@@ -124,7 +134,7 @@
                 android:layout_marginHorizontal="3dp"
                 android:layout_weight="1"
                 android:text="@string/next"
-                android:textColor="@color/holo_red" />
+                android:textColor="@color/holo_green" />
 
             <ImageView
                 android:id="@+id/ivBioCarb"
@@ -183,7 +193,7 @@
                 android:layout_marginHorizontal="3dp"
                 android:layout_weight="1"
                 android:text="@string/next"
-                android:textColor="@color/holo_red" />
+                android:textColor="@color/holo_green" />
 
             <ImageView
                 android:id="@+id/ivNitrax"
@@ -242,7 +252,7 @@
                 android:layout_marginHorizontal="3dp"
                 android:layout_weight="1"
                 android:text="@string/next"
-                android:textColor="@color/holo_red" />
+                android:textColor="@color/holo_green" />
 
             <ImageView
                 android:id="@+id/ivBioPlusCoarse"
@@ -301,7 +311,7 @@
                 android:layout_marginHorizontal="3dp"
                 android:layout_weight="1"
                 android:text="@string/next"
-                android:textColor="@color/holo_red" />
+                android:textColor="@color/holo_green" />
 
             <ImageView
                 android:id="@+id/ivBioPlusFine"
@@ -371,7 +381,7 @@
                 android:layout_marginHorizontal="3dp"
                 android:layout_weight="1"
                 android:text="@string/next"
-                android:textColor="@color/holo_red" />
+                android:textColor="@color/holo_green" />
 
             <ImageView
                 android:id="@+id/ivBioBoost"
@@ -430,7 +440,7 @@
                 android:layout_marginHorizontal="3dp"
                 android:layout_weight="1"
                 android:text="@string/next"
-                android:textColor="@color/holo_red" />
+                android:textColor="@color/holo_green" />
 
             <ImageView
                 android:id="@+id/ivCarbax"
@@ -489,7 +499,7 @@
                 android:layout_marginHorizontal="3dp"
                 android:layout_weight="1"
                 android:text="@string/next"
-                android:textColor="@color/holo_red" />
+                android:textColor="@color/holo_green" />
 
             <ImageView
                 android:id="@+id/ivCirax"
@@ -548,7 +558,7 @@
                 android:layout_marginHorizontal="3dp"
                 android:layout_weight="1"
                 android:text="@string/next"
-                android:textColor="@color/holo_red" />
+                android:textColor="@color/holo_green" />
 
             <ImageView
                 android:id="@+id/ivPhorax"
@@ -606,7 +616,7 @@
                 android:layout_marginHorizontal="3dp"
                 android:layout_weight="1"
                 android:text="@string/next"
-                android:textColor="@color/holo_red" />
+                android:textColor="@color/holo_green" />
 
             <ImageView
                 android:id="@+id/ivAmorax"
