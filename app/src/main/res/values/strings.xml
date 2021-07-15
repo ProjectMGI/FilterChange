@@ -29,4 +29,5 @@
     <string name="minus">minus</string>
     <string name="plus">plus</string>
     <string name="divider">divider</string>
+    <string name="bioPad">BioPad</string>
 </resources>

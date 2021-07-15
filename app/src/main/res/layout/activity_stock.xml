@@ -49,31 +49,101 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.08" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.46" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.62" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.86" />
+
     <TextView
-        android:id="@+id/bioBoost"
+        android:id="@+id/bioPad"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginVertical="5dp"
         android:gravity="center"
-        android:text="@string/bioBoost"
+        android:text="@string/bioPad"
         app:layout_constraintBottom_toBottomOf="@id/guidelineH1"
         app:layout_constraintEnd_toEndOf="@id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/bioBoostMinus"
+        android:id="@+id/bioPadMinus"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="@string/minus"
         app:layout_constraintBottom_toBottomOf="@id/guidelineH1"
         app:layout_constraintEnd_toEndOf="@id/guideline4"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_remove"
-        android:contentDescription="@string/minus" />
+        app:srcCompat="@drawable/ic_remove" />
 
     <TextView
-        android:id="@+id/bioBoostCount"
+        android:id="@+id/bioPadCount"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginVertical="5dp"
@@ -85,18 +155,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/bioBoostPlus"
+        android:id="@+id/bioPadPlus"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="@string/plus"
         app:layout_constraintBottom_toBottomOf="@id/guidelineH1"
         app:layout_constraintEnd_toEndOf="@id/guideline6"
         app:layout_constraintStart_toStartOf="@id/guideline5"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_add"
-        android:contentDescription="@string/plus" />
+        app:srcCompat="@drawable/ic_add" />
 
     <TextView
-        android:id="@+id/bioBoostMonths"
+        android:id="@+id/bioPadMonths"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginVertical="5dp"
@@ -108,7 +178,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/bioBoostEnough"
+        android:id="@+id/bioPadEnough"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginVertical="5dp"
@@ -121,14 +191,771 @@
 
     <ImageView
         android:id="@+id/divider1"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guidelineH1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/line"
-        android:contentDescription="@string/divider" />
+        android:contentDescription="@string/divider"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH1" />
+
+    <TextView
+        android:id="@+id/bioCarb"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="BioCarb"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH2"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH1" />
+
+    <ImageView
+        android:id="@+id/bioCarbMinus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/minus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH2"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="@id/guidelineH1"
+        app:srcCompat="@drawable/ic_remove" />
+
+    <TextView
+        android:id="@+id/bioCarbCount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH2"
+        app:layout_constraintEnd_toEndOf="@id/guideline5"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="@id/guidelineH1" />
+
+    <ImageView
+        android:id="@+id/bioCarbPlus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/plus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH2"
+        app:layout_constraintEnd_toEndOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guidelineH1"
+        app:srcCompat="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/bioCarbMonths"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/months_left"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH2"
+        app:layout_constraintEnd_toEndOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toTopOf="@id/guidelineH1" />
+
+    <TextView
+        android:id="@+id/bioCarbEnough"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline9"
+        app:layout_constraintTop_toTopOf="@id/guidelineH1" />
+
+    <ImageView
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line"
+        android:contentDescription="@string/divider"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH2" />
+
+    <TextView
+        android:id="@+id/bioNitrax"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="Nitrax"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH3"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH2" />
+
+    <ImageView
+        android:id="@+id/bioNitraxMinus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/minus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH3"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="@id/guidelineH2"
+        app:srcCompat="@drawable/ic_remove" />
+
+    <TextView
+        android:id="@+id/bioNitraxCount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH3"
+        app:layout_constraintEnd_toEndOf="@id/guideline5"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="@id/guidelineH2" />
+
+    <ImageView
+        android:id="@+id/bioNitraxPlus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/plus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH3"
+        app:layout_constraintEnd_toEndOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guidelineH2"
+        app:srcCompat="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/bioNitraxMonths"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/months_left"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH3"
+        app:layout_constraintEnd_toEndOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toTopOf="@id/guidelineH2" />
+
+    <TextView
+        android:id="@+id/bioNitraxEnough"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline9"
+        app:layout_constraintTop_toTopOf="@id/guidelineH2" />
+
+    <ImageView
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line"
+        android:contentDescription="@string/divider"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH3" />
+
+    <TextView
+        android:id="@+id/bioCoarse"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="BioCoarse"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH4"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH3" />
+
+    <ImageView
+        android:id="@+id/bioCoarseMinus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/minus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH4"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="@id/guidelineH3"
+        app:srcCompat="@drawable/ic_remove" />
+
+    <TextView
+        android:id="@+id/bioCoarseCount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH4"
+        app:layout_constraintEnd_toEndOf="@id/guideline5"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="@id/guidelineH3" />
+
+    <ImageView
+        android:id="@+id/bioCoarsePlus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/plus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH4"
+        app:layout_constraintEnd_toEndOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guidelineH3"
+        app:srcCompat="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/bioCoarseMonths"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/months_left"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH4"
+        app:layout_constraintEnd_toEndOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toTopOf="@id/guidelineH3" />
+
+    <TextView
+        android:id="@+id/bioCoarseEnough"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline9"
+        app:layout_constraintTop_toTopOf="@id/guidelineH3" />
+
+    <ImageView
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line"
+        android:contentDescription="@string/divider"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH4" />
+
+    <TextView
+        android:id="@+id/bioFine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="BioFine"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH5"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH4" />
+
+    <ImageView
+        android:id="@+id/bioFineMinus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/minus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH5"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="@id/guidelineH4"
+        app:srcCompat="@drawable/ic_remove" />
+
+    <TextView
+        android:id="@+id/bioFineCount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH5"
+        app:layout_constraintEnd_toEndOf="@id/guideline5"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="@id/guidelineH4" />
+
+    <ImageView
+        android:id="@+id/bioFinePlus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/plus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH5"
+        app:layout_constraintEnd_toEndOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guidelineH4"
+        app:srcCompat="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/bioFineMonths"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/months_left"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH5"
+        app:layout_constraintEnd_toEndOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toTopOf="@id/guidelineH4" />
+
+    <TextView
+        android:id="@+id/bioFineEnough"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline9"
+        app:layout_constraintTop_toTopOf="@id/guidelineH4" />
+
+    <ImageView
+        android:id="@+id/divider5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line"
+        android:contentDescription="@string/divider"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH5" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/divider5"
+        app:layout_constraintBottom_toBottomOf="@id/divider6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/optional_media"
+        android:gravity="center"/>
+
+    <ImageView
+        android:id="@+id/divider6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line"
+        android:contentDescription="@string/divider"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH6" />
+
+    <TextView
+        android:id="@+id/bioBoost"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="BioBoost"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH7"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH6" />
+
+    <ImageView
+        android:id="@+id/bioBoostMinus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/minus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH7"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="@id/guidelineH6"
+        app:srcCompat="@drawable/ic_remove" />
+
+    <TextView
+        android:id="@+id/bioBoostCount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH7"
+        app:layout_constraintEnd_toEndOf="@id/guideline5"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="@id/guidelineH6" />
+
+    <ImageView
+        android:id="@+id/bioBoostPlus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/plus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH7"
+        app:layout_constraintEnd_toEndOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guidelineH6"
+        app:srcCompat="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/bioBoostMonths"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/months_left"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH7"
+        app:layout_constraintEnd_toEndOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toTopOf="@id/guidelineH6" />
+
+    <TextView
+        android:id="@+id/bioBoostEnough"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline9"
+        app:layout_constraintTop_toTopOf="@id/guidelineH6" />
+
+    <ImageView
+        android:id="@+id/divider7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line"
+        android:contentDescription="@string/divider"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH7" />
+
+    <TextView
+        android:id="@+id/Carbax"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="Carbax"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH8"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH7" />
+
+    <ImageView
+        android:id="@+id/CarbaxMinus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/minus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH8"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="@id/guidelineH7"
+        app:srcCompat="@drawable/ic_remove" />
+
+    <TextView
+        android:id="@+id/CarbaxCount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH8"
+        app:layout_constraintEnd_toEndOf="@id/guideline5"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="@id/guidelineH7" />
+
+    <ImageView
+        android:id="@+id/CarbaxPlus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/plus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH8"
+        app:layout_constraintEnd_toEndOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guidelineH7"
+        app:srcCompat="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/CarbaxMonths"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/months_left"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH8"
+        app:layout_constraintEnd_toEndOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toTopOf="@id/guidelineH7" />
+
+    <TextView
+        android:id="@+id/CarbaxEnough"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline9"
+        app:layout_constraintTop_toTopOf="@id/guidelineH7" />
+
+    <ImageView
+        android:id="@+id/divider8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line"
+        android:contentDescription="@string/divider"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH8" />
+
+    <TextView
+        android:id="@+id/Cirax"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="Cirax"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH9"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH8" />
+
+    <ImageView
+        android:id="@+id/CiraxMinus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/minus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH9"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="@id/guidelineH8"
+        app:srcCompat="@drawable/ic_remove" />
+
+    <TextView
+        android:id="@+id/CiraxCount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH9"
+        app:layout_constraintEnd_toEndOf="@id/guideline5"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="@id/guidelineH8" />
+
+    <ImageView
+        android:id="@+id/CiraxPlus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/plus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH9"
+        app:layout_constraintEnd_toEndOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guidelineH8"
+        app:srcCompat="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/CiraxMonths"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/months_left"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH9"
+        app:layout_constraintEnd_toEndOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toTopOf="@id/guidelineH8" />
+
+    <TextView
+        android:id="@+id/CiraxEnough"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline9"
+        app:layout_constraintTop_toTopOf="@id/guidelineH8" />
+
+    <ImageView
+        android:id="@+id/divider9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line"
+        android:contentDescription="@string/divider"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH9" />
+
+    <TextView
+        android:id="@+id/Phorax"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="Phorax"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH10"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH9" />
+
+    <ImageView
+        android:id="@+id/PhoraxMinus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/minus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH10"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="@id/guidelineH9"
+        app:srcCompat="@drawable/ic_remove" />
+
+    <TextView
+        android:id="@+id/PhoraxCount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH10"
+        app:layout_constraintEnd_toEndOf="@id/guideline5"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="@id/guidelineH9" />
+
+    <ImageView
+        android:id="@+id/PhoraxPlus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/plus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH10"
+        app:layout_constraintEnd_toEndOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guidelineH9"
+        app:srcCompat="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/PhoraxMonths"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/months_left"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH10"
+        app:layout_constraintEnd_toEndOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toTopOf="@id/guidelineH9" />
+
+    <TextView
+        android:id="@+id/PhoraxEnough"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline9"
+        app:layout_constraintTop_toTopOf="@id/guidelineH9" />
+
+    <ImageView
+        android:id="@+id/divider10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line"
+        android:contentDescription="@string/divider"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH10" />
+
+    <TextView
+        android:id="@+id/Amorax"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="Amorax"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH11"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH10" />
+
+    <ImageView
+        android:id="@+id/AmoraxMinus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/minus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH11"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="@id/guidelineH10"
+        app:srcCompat="@drawable/ic_remove" />
+
+    <TextView
+        android:id="@+id/AmoraxCount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH11"
+        app:layout_constraintEnd_toEndOf="@id/guideline5"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="@id/guidelineH10" />
+
+    <ImageView
+        android:id="@+id/AmoraxPlus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/plus"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH11"
+        app:layout_constraintEnd_toEndOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guidelineH10"
+        app:srcCompat="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/AmoraxMonths"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/months_left"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH11"
+        app:layout_constraintEnd_toEndOf="@id/guideline9"
+        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintTop_toTopOf="@id/guidelineH10" />
+
+    <TextView
+        android:id="@+id/AmoraxEnough"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineH11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline9"
+        app:layout_constraintTop_toTopOf="@id/guidelineH10" />
+
+    <ImageView
+        android:id="@+id/divider7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line"
+        android:contentDescription="@string/divider"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH11" />
+
+
+
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

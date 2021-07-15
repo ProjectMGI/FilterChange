@@ -12,8 +12,8 @@ public class Stock extends AppCompatActivity {
 
     private SharedPreferences sharedPreferences;
 
-    private TextView tvBioBoostCount, tvBioBoostEnough;
-    private int bioBoostCount;
+    private TextView tvBioPadCount, tvBioPadEnough;
+    private int bioPadCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,29 +22,29 @@ public class Stock extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("sp", MODE_PRIVATE);
 
-        tvBioBoostCount = findViewById(R.id.bioBoostCount);
-        tvBioBoostEnough = findViewById(R.id.bioBoostEnough);
-        ImageView ivBioBoostPlus = findViewById(R.id.bioBoostPlus);
-        ImageView ivBioBoostMinus = findViewById(R.id.bioBoostMinus);
+        tvBioPadCount = findViewById(R.id.bioPadCount);
+        tvBioPadEnough = findViewById(R.id.bioPadEnough);
+        ImageView ivBioBoostPlus = findViewById(R.id.bioPadPlus);
+        ImageView ivBioBoostMinus = findViewById(R.id.bioPadMinus);
 
         updateFromShared();
 
         ivBioBoostPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bioBoostCount++;
+                bioPadCount++;
                 saveShared();
-                updateBioBoost();
+                updateUI(bioPadCount, tvBioPadCount, tvBioPadEnough);
             }
         });
         ivBioBoostMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (bioBoostCount > 0) {
-                    bioBoostCount--;
+                if (bioPadCount > 0) {
+                    bioPadCount--;
                     saveShared();
-                    updateBioBoost();
+                    updateUI(bioPadCount, tvBioPadCount, tvBioPadEnough);
                 }
             }
         });
@@ -52,27 +52,27 @@ public class Stock extends AppCompatActivity {
     }
 
     private void updateFromShared() {
-        bioBoostCount = sharedPreferences.getInt("bioBoostCount", 0);
-        updateBioBoost();
+        bioPadCount = sharedPreferences.getInt("bioPadCount", 0);
+        // TODO: 15/07/2021 fix it for all updateUI(); red for alert may already in update
     }
 
 
     private void saveShared() {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt("bioBoostCount", bioBoostCount);
+        editor.putInt("bioPadCount", bioPadCount);
 
         editor.apply();
 
     }
 
-    private void updateBioBoost() {
-        if (bioBoostCount <2 ) {
-            tvBioBoostEnough.setBackgroundResource(R.drawable.red_alert);
+    private void updateUI(int count, TextView countTextView, TextView enoughTextView) {
+        if (count < 2) {
+            enoughTextView.setBackgroundResource(R.drawable.red_alert);
         } else {
 
-            tvBioBoostEnough.setBackgroundResource(R.color.m);
+            enoughTextView.setBackgroundResource(R.color.black);
         }
-        tvBioBoostCount.setText(String.valueOf(bioBoostCount));
-        tvBioBoostEnough.setText(String.valueOf(bioBoostCount));
+        countTextView.setText(String.valueOf(bioPadCount));
+        enoughTextView.setText(String.valueOf(bioPadCount));
     }
 }
