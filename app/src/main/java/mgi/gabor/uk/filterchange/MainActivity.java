@@ -1,14 +1,11 @@
 package mgi.gabor.uk.filterchange;
 
 import android.app.DatePickerDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -142,341 +139,246 @@ public class MainActivity extends AppCompatActivity {
         initFromShared();
 
         Button btnOpenPicture = findViewById(R.id.btnOpenPicture);
-        btnOpenPicture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, FilterPicture.class));
-            }
-        });
+        btnOpenPicture.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, FilterPicture.class)));
 
         Button btnOpenStock = findViewById(R.id.btnOpenStock);
-        btnOpenStock.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Stock.class));
-            }
+        btnOpenStock.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Stock.class)));
+
+        tvBioPadLast.setOnClickListener(v -> {
+            Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, (view, year110, month110, dayOfMonth) -> {
+                cBioPadL.set(Calendar.YEAR, year110);
+                cBioPadL.set(Calendar.MONTH, month110);
+                cBioPadL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cBioPadN.set(Calendar.YEAR, year110);
+                cBioPadN.set(Calendar.MONTH, month110);
+                cBioPadN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cBioPadN.add(Calendar.DATE, 7);
+                String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioPadL.getTime());
+                String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioPadN.getTime());
+                tvBioPadLast.setText(currentDateString);
+                tvBioPadNext.setText(nextDateString);
+                saveToShared();
+                updateDrawable(ivBioPad, cBioPadN);
+            }, year, month, day);
+            datePickerDialog.show();
         });
 
-        tvBioPadLast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        cBioPadL.set(Calendar.YEAR, year);
-                        cBioPadL.set(Calendar.MONTH, month);
-                        cBioPadL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cBioPadN.set(Calendar.YEAR, year);
-                        cBioPadN.set(Calendar.MONTH, month);
-                        cBioPadN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cBioPadN.add(Calendar.DATE, 7);
-                        String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioPadL.getTime());
-                        String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioPadN.getTime());
-                        tvBioPadLast.setText(currentDateString);
-                        tvBioPadNext.setText(nextDateString);
-                        saveToShared();
-                        updateDrawable(ivBioPad, cBioPadN);
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
-            }
+        tvBioCarbLast.setOnClickListener(v -> {
+            Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, (view, year19, month19, dayOfMonth) -> {
+                cBioCarbL.set(Calendar.YEAR, year19);
+                cBioCarbL.set(Calendar.MONTH, month19);
+                cBioCarbL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cBioCarbN.set(Calendar.YEAR, year19);
+                cBioCarbN.set(Calendar.MONTH, month19);
+                cBioCarbN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cBioCarbN.add(Calendar.DATE, 28);
+                String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioCarbL.getTime());
+                String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioCarbN.getTime());
+                tvBioCarbLast.setText(currentDateString);
+                tvBioCarbNext.setText(nextDateString);
+                saveToShared();
+                updateDrawable(ivBioCarb, cBioCarbN);
+            }, year, month, day);
+            datePickerDialog.show();
         });
 
-        tvBioCarbLast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        cBioCarbL.set(Calendar.YEAR, year);
-                        cBioCarbL.set(Calendar.MONTH, month);
-                        cBioCarbL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cBioCarbN.set(Calendar.YEAR, year);
-                        cBioCarbN.set(Calendar.MONTH, month);
-                        cBioCarbN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cBioCarbN.add(Calendar.DATE, 28);
-                        String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioCarbL.getTime());
-                        String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioCarbN.getTime());
-                        tvBioCarbLast.setText(currentDateString);
-                        tvBioCarbNext.setText(nextDateString);
-                        saveToShared();
-                        updateDrawable(ivBioCarb, cBioCarbN);
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
-            }
+        tvNitraxLast.setOnClickListener(v -> {
+            Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, (view, year18, month18, dayOfMonth) -> {
+                cNitraxL.set(Calendar.YEAR, year18);
+                cNitraxL.set(Calendar.MONTH, month18);
+                cNitraxL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cNitraxN.set(Calendar.YEAR, year18);
+                cNitraxN.set(Calendar.MONTH, month18);
+                cNitraxN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cNitraxN.add(Calendar.DATE, 56);
+                String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cNitraxL.getTime());
+                String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cNitraxN.getTime());
+                tvNitraxLast.setText(currentDateString);
+                tvNitraxNext.setText(nextDateString);
+                saveToShared();
+                updateDrawable(ivNitrax, cNitraxN);
+            }, year, month, day);
+            datePickerDialog.show();
         });
 
-        tvNitraxLast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        cNitraxL.set(Calendar.YEAR, year);
-                        cNitraxL.set(Calendar.MONTH, month);
-                        cNitraxL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cNitraxN.set(Calendar.YEAR, year);
-                        cNitraxN.set(Calendar.MONTH, month);
-                        cNitraxN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cNitraxN.add(Calendar.DATE, 56);
-                        String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cNitraxL.getTime());
-                        String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cNitraxN.getTime());
-                        tvNitraxLast.setText(currentDateString);
-                        tvNitraxNext.setText(nextDateString);
-                        saveToShared();
-                        updateDrawable(ivNitrax, cNitraxN);
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
-            }
+        tvBioPlusCoarseLast.setOnClickListener(v -> {
+            Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, (view, year17, month17, dayOfMonth) -> {
+                cBioPlusCoarseL.set(Calendar.YEAR, year17);
+                cBioPlusCoarseL.set(Calendar.MONTH, month17);
+                cBioPlusCoarseL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cBioPlusCoarseN.set(Calendar.YEAR, year17);
+                cBioPlusCoarseN.set(Calendar.MONTH, month17);
+                cBioPlusCoarseN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cBioPlusCoarseN.add(Calendar.DATE, 84);
+                String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioPlusCoarseL.getTime());
+                String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioPlusCoarseN.getTime());
+                tvBioPlusCoarseLast.setText(currentDateString);
+                tvBioPlusCoarseNext.setText(nextDateString);
+                saveToShared();
+                updateDrawable(ivBioPlusCoarse, cBioPlusCoarseN);
+            }, year, month, day);
+            datePickerDialog.show();
         });
 
-        tvBioPlusCoarseLast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        cBioPlusCoarseL.set(Calendar.YEAR, year);
-                        cBioPlusCoarseL.set(Calendar.MONTH, month);
-                        cBioPlusCoarseL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cBioPlusCoarseN.set(Calendar.YEAR, year);
-                        cBioPlusCoarseN.set(Calendar.MONTH, month);
-                        cBioPlusCoarseN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cBioPlusCoarseN.add(Calendar.DATE, 84);
-                        String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioPlusCoarseL.getTime());
-                        String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioPlusCoarseN.getTime());
-                        tvBioPlusCoarseLast.setText(currentDateString);
-                        tvBioPlusCoarseNext.setText(nextDateString);
-                        saveToShared();
-                        updateDrawable(ivBioPlusCoarse, cBioPlusCoarseN);
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
-            }
+        tvBioPlusFineLast.setOnClickListener(v -> {
+            Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, (view, year16, month16, dayOfMonth) -> {
+                cBioPlusFineL.set(Calendar.YEAR, year16);
+                cBioPlusFineL.set(Calendar.MONTH, month16);
+                cBioPlusFineL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cBioPlusFineN.set(Calendar.YEAR, year16);
+                cBioPlusFineN.set(Calendar.MONTH, month16);
+                cBioPlusFineN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cBioPlusFineN.add(Calendar.DATE, 252);
+                String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioPlusFineL.getTime());
+                String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioPlusFineN.getTime());
+                tvBioPlusFineLast.setText(currentDateString);
+                tvBioPlusFineNext.setText(nextDateString);
+                saveToShared();
+                updateDrawable(ivBioPlusFine, cBioPlusFineN);
+            }, year, month, day);
+            datePickerDialog.show();
         });
 
-        tvBioPlusFineLast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        cBioPlusFineL.set(Calendar.YEAR, year);
-                        cBioPlusFineL.set(Calendar.MONTH, month);
-                        cBioPlusFineL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cBioPlusFineN.set(Calendar.YEAR, year);
-                        cBioPlusFineN.set(Calendar.MONTH, month);
-                        cBioPlusFineN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cBioPlusFineN.add(Calendar.DATE, 252);
-                        String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioPlusFineL.getTime());
-                        String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioPlusFineN.getTime());
-                        tvBioPlusFineLast.setText(currentDateString);
-                        tvBioPlusFineNext.setText(nextDateString);
-                        saveToShared();
-                        updateDrawable(ivBioPlusFine, cBioPlusFineN);
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
-            }
+        tvBioBoostLast.setOnClickListener(v -> {
+            Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, (view, year15, month15, dayOfMonth) -> {
+                cBioBoostL.set(Calendar.YEAR, year15);
+                cBioBoostL.set(Calendar.MONTH, month15);
+                cBioBoostL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cBioBoostN.set(Calendar.YEAR, year15);
+                cBioBoostN.set(Calendar.MONTH, month15);
+                cBioBoostN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cBioBoostN.add(Calendar.DATE, 28);
+                String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioBoostL.getTime());
+                String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioBoostN.getTime());
+                tvBioBoostLast.setText(currentDateString);
+                tvBioBoostNext.setText(nextDateString);
+                saveToShared();
+                updateDrawable(ivBioBoost, cBioBoostN);
+            }, year, month, day);
+            datePickerDialog.show();
         });
 
-        tvBioBoostLast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        cBioBoostL.set(Calendar.YEAR, year);
-                        cBioBoostL.set(Calendar.MONTH, month);
-                        cBioBoostL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cBioBoostN.set(Calendar.YEAR, year);
-                        cBioBoostN.set(Calendar.MONTH, month);
-                        cBioBoostN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cBioBoostN.add(Calendar.DATE, 28);
-                        String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioBoostL.getTime());
-                        String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cBioBoostN.getTime());
-                        tvBioBoostLast.setText(currentDateString);
-                        tvBioBoostNext.setText(nextDateString);
-                        saveToShared();
-                        updateDrawable(ivBioBoost, cBioBoostN);
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
-            }
+        tvCarbaxLast.setOnClickListener(v -> {
+            Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, (view, year14, month14, dayOfMonth) -> {
+                cCarbaxL.set(Calendar.YEAR, year14);
+                cCarbaxL.set(Calendar.MONTH, month14);
+                cCarbaxL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cCarbaxN.set(Calendar.YEAR, year14);
+                cCarbaxN.set(Calendar.MONTH, month14);
+                cCarbaxN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cCarbaxN.add(Calendar.DATE, 56);
+                String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cCarbaxL.getTime());
+                String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cCarbaxN.getTime());
+                tvCarbaxLast.setText(currentDateString);
+                tvCarbaxNext.setText(nextDateString);
+                saveToShared();
+                updateDrawable(ivCarbax, cCarbaxN);
+            }, year, month, day);
+            datePickerDialog.show();
         });
 
-        tvCarbaxLast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        cCarbaxL.set(Calendar.YEAR, year);
-                        cCarbaxL.set(Calendar.MONTH, month);
-                        cCarbaxL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cCarbaxN.set(Calendar.YEAR, year);
-                        cCarbaxN.set(Calendar.MONTH, month);
-                        cCarbaxN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cCarbaxN.add(Calendar.DATE, 56);
-                        String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cCarbaxL.getTime());
-                        String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cCarbaxN.getTime());
-                        tvCarbaxLast.setText(currentDateString);
-                        tvCarbaxNext.setText(nextDateString);
-                        saveToShared();
-                        updateDrawable(ivCarbax, cCarbaxN);
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
-            }
+        tvCiraxLast.setOnClickListener(v -> {
+            Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, (view, year13, month13, dayOfMonth) -> {
+                cCiraxL.set(Calendar.YEAR, year13);
+                cCiraxL.set(Calendar.MONTH, month13);
+                cCiraxL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cCiraxN.set(Calendar.YEAR, year13);
+                cCiraxN.set(Calendar.MONTH, month13);
+                cCiraxN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cCiraxN.add(Calendar.DATE, 365);
+                String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cCiraxL.getTime());
+                String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cCiraxN.getTime());
+                tvCiraxLast.setText(currentDateString);
+                tvCiraxNext.setText(nextDateString);
+                saveToShared();
+                updateDrawable(ivCirax, cCiraxN);
+            }, year, month, day);
+            datePickerDialog.show();
         });
 
-        tvCiraxLast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        cCiraxL.set(Calendar.YEAR, year);
-                        cCiraxL.set(Calendar.MONTH, month);
-                        cCiraxL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cCiraxN.set(Calendar.YEAR, year);
-                        cCiraxN.set(Calendar.MONTH, month);
-                        cCiraxN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cCiraxN.add(Calendar.DATE, 365);
-                        String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cCiraxL.getTime());
-                        String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cCiraxN.getTime());
-                        tvCiraxLast.setText(currentDateString);
-                        tvCiraxNext.setText(nextDateString);
-                        saveToShared();
-                        updateDrawable(ivCirax, cCiraxN);
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
-            }
+        tvPhoraxLast.setOnClickListener(v -> {
+            Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, (view, year12, month12, dayOfMonth) -> {
+                cPhoraxL.set(Calendar.YEAR, year12);
+                cPhoraxL.set(Calendar.MONTH, month12);
+                cPhoraxL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cPhoraxN.set(Calendar.YEAR, year12);
+                cPhoraxN.set(Calendar.MONTH, month12);
+                cPhoraxN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cPhoraxN.add(Calendar.DATE, 14);
+                String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cPhoraxL.getTime());
+                String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cPhoraxN.getTime());
+                tvPhoraxLast.setText(currentDateString);
+                tvPhoraxNext.setText(nextDateString);
+                saveToShared();
+                updateDrawable(ivPhorax, cPhoraxN);
+            }, year, month, day);
+            datePickerDialog.show();
         });
 
-        tvPhoraxLast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        cPhoraxL.set(Calendar.YEAR, year);
-                        cPhoraxL.set(Calendar.MONTH, month);
-                        cPhoraxL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cPhoraxN.set(Calendar.YEAR, year);
-                        cPhoraxN.set(Calendar.MONTH, month);
-                        cPhoraxN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cPhoraxN.add(Calendar.DATE, 14);
-                        String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cPhoraxL.getTime());
-                        String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cPhoraxN.getTime());
-                        tvPhoraxLast.setText(currentDateString);
-                        tvPhoraxNext.setText(nextDateString);
-                        saveToShared();
-                        updateDrawable(ivPhorax, cPhoraxN);
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
-            }
+        tvAmoraxLast.setOnClickListener(v -> {
+            Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, (view, year1, month1, dayOfMonth) -> {
+                cAmoraxL.set(Calendar.YEAR, year1);
+                cAmoraxL.set(Calendar.MONTH, month1);
+                cAmoraxL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cAmoraxN.set(Calendar.YEAR, year1);
+                cAmoraxN.set(Calendar.MONTH, month1);
+                cAmoraxN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                cAmoraxN.add(Calendar.DATE, 84);
+                String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cAmoraxL.getTime());
+                String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cAmoraxN.getTime());
+                tvAmoraxLast.setText(currentDateString);
+                tvAmoraxNext.setText(nextDateString);
+                saveToShared();
+                updateDrawable(ivAmorax, cAmoraxN);
+            }, year, month, day);
+            datePickerDialog.show();
         });
 
-        tvAmoraxLast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        cAmoraxL.set(Calendar.YEAR, year);
-                        cAmoraxL.set(Calendar.MONTH, month);
-                        cAmoraxL.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cAmoraxN.set(Calendar.YEAR, year);
-                        cAmoraxN.set(Calendar.MONTH, month);
-                        cAmoraxN.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        cAmoraxN.add(Calendar.DATE, 84);
-                        String currentDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cAmoraxL.getTime());
-                        String nextDateString = DateFormat.getDateInstance(DateFormat.SHORT).format(cAmoraxN.getTime());
-                        tvAmoraxLast.setText(currentDateString);
-                        tvAmoraxNext.setText(nextDateString);
-                        saveToShared();
-                        updateDrawable(ivAmorax, cAmoraxN);
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
-            }
-        });
-
-        ivBioBoost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteOptional(cBioBoostL, cBioBoostN);
-            }
-        });
-        ivCarbax.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteOptional(cCarbaxL, cCarbaxN);
-            }
-        });
-        ivCirax.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteOptional(cCiraxL, cCiraxN);
-            }
-        });
-        ivPhorax.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteOptional(cPhoraxL, cPhoraxN);
-            }
-        });
-        ivAmorax.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteOptional(cAmoraxL, cAmoraxN);
-            }
-        });
+        ivBioBoost.setOnClickListener(v -> deleteOptional(cBioBoostL, cBioBoostN));
+        ivCarbax.setOnClickListener(v -> deleteOptional(cCarbaxL, cCarbaxN));
+        ivCirax.setOnClickListener(v -> deleteOptional(cCiraxL, cCiraxN));
+        ivPhorax.setOnClickListener(v -> deleteOptional(cPhoraxL, cPhoraxN));
+        ivAmorax.setOnClickListener(v -> deleteOptional(cAmoraxL, cAmoraxN));
 
 
     }
@@ -684,14 +586,11 @@ public class MainActivity extends AppCompatActivity {
                 .setTitle("Delete date")
                 .setMessage("Are you sure?")
                 .setNeutralButton("No, cancel", null)
-                .setPositiveButton("Yes, please", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        calendar1.setTimeInMillis(0);
-                        calendar2.setTimeInMillis(0);
-                        saveToShared();
-                        initFromShared();
-                    }
+                .setPositiveButton("Yes, please", (dialog, which) -> {
+                    calendar1.setTimeInMillis(0);
+                    calendar2.setTimeInMillis(0);
+                    saveToShared();
+                    initFromShared();
                 })
                 .create().show();
     }

@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="@string/biopad_nmech_filter" />
+                android:text="@string/biopad_mech_filter" />
 
             <TextView
                 android:id="@+id/tvBioPadLast"
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="@string/biocarb_nc_filter" />
+                android:text="@string/biocarb_filter" />
 
             <TextView
                 android:id="@+id/tvBioCarbLast"
@@ -175,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="@string/nitrax_nn_remover" />
+                android:text="@string/nitrax_remover" />
 
             <TextView
                 android:id="@+id/tvNitraxLast"
@@ -293,7 +293,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="@string/bioplus_nfine_2x" />
+                android:text="@string/bioplus_fine_2x" />
 
             <TextView
                 android:id="@+id/tvBioPlusFineLast"
@@ -363,7 +363,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="@string/bioboost_nfilter_acc" />
+                android:text="@string/bioboost_filter_acc" />
 
             <TextView
                 android:id="@+id/tvBioBoostLast"
@@ -422,7 +422,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="@string/carbax_ncarbon" />
+                android:text="@string/carbax_carbon" />
 
             <TextView
                 android:id="@+id/tvCarbaxLast"
@@ -481,7 +481,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="@string/cirax_ncer_gran" />
+                android:text="@string/cirax_granulate" />
 
             <TextView
                 android:id="@+id/tvCiraxLast"
@@ -540,7 +540,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="@string/phorax_nphosphate" />
+                android:text="@string/phorax_phosphate" />
 
             <TextView
                 android:id="@+id/tvPhoraxLast"
@@ -598,7 +598,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="@string/amorax_nammonia" />
+                android:text="@string/amorax_ammonia" />
 
             <TextView
                 android:id="@+id/tvAmoraxLast"
